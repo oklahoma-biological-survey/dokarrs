@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="http://static.cybercommons.org/bootstrap/css/bootstrap.min.css">
+<!--<link type="text/css" rel="stylesheet" href="http://static.cybercommons.org/css/bootstrp/bootstrap.min.css"/>-->
+<link type="text/css" href="http://static.cybercommons.org/js/jquery-ui-1.10.3/themes/base/jquery.ui.all.css" rel="Stylesheet"/>
+<link type="text/css" href="http://static.cybercommons.org/css/cybercomui/jquery-ui-1.8.13.custom_ms.css" rel="Stylesheet"/>
+<script type="text/javascript" src="http://static.cybercommons.org/js/jquery-ui-1.10.3/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="http://static.cybercommons.org/js/jquery-ui-1.10.3/ui/jquery-ui.js"></script>
+<!--<script type="text/javascript" src="http://static.cybercommons.org/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="http://static.cybercommons.org/js/jquery-ui.min.js"></script>-->
+<script type="text/javascript" src="http://static.cybercommons.org/js/handlebars-v1.3.0.js"></script>
+<script type="text/javascript" src="data_layer.js"></script>
+<style>
+    body {margin:20px;} 
+    table {border-collapse: collapse;width:100%;}
+    table, th, td {border: 1px solid black;padding: 3px;}
+    td { align: center;}
+</style>
+</head>
+<body>
+<h1 align="center">Distribution of Oklahoma Amphibian and Reptiles by Recorded Sightings (DOKARRS)</h1>
+<p>
+DOKARRS is a database of recorded sightings of amphibians and reptiles in Oklahoma. Records have been entered by students, researchers, enthusiasts and others. Dr. Charles Carpenter, herpetologist at the University of Oklahoma, began the database in the mid 1970s. The most recent entry is dated 1998. 
+DOKARRS is intended as a repository for all field records of both sighted and collected amphibians and reptiles in Oklahoma. Oklahoma specimen records from the University of Michigan Museum, the Carnegie Museum, and other museums are included. The database does not include specimen records from the Sam Noble Oklahoma Museum of Natural History (see link below). The information in the database is intended for public use as well as for academic research purposes. 
+Genera and species scientific names were derived from either: 1) Webb, R.G. 1970. Reptiles of Oklahoma. A Stovall Museum Publication, U. Oklahoma Press, Norman, or 2) Conant, R. 1975. A Field Guide to Reptiles and Amphibians of Eastern and Central United States. Houghton-Mifflin Co., Boston. Dr. Carpenter retained the family Iguanidae for the database.
+Scientific names on the observations in the database are those assigned by the observer at the time of observation and verified by Dr. Carpenter at that time. No effort has been made to reassign names as the scientific nomenclature has changed over time. For instance, Rana pipiens has been retained for those specimens identified as such by observers even though that species complex has now been split and R. pipiens sensu stricta does not occur in Oklahoma. Common names were added to the database in September 2000 to make the database easier to use on the World Wide Web. Common names were derived from the scientific names. If, because of nomenclatural changes, there was ambiguity in what name should be assigned, no common name was assigned. Please read the metadata file for more information on DOKARRS. 
+Disclaimer: The Oklahoma Biological Survey cannot warranty the accuracy or utility of the data. OBS data may require a certain level of biological expertise for proper analysis, interpretation and application. Our staff is available to advise you on the technical aspects of these data.</p>
+<h3> Search </h3>
+<input type="text" id="search" name="searchterm" style="margin-left:40px;width:60%"><button id="button" type="button" style="vertical-align:super;margin-left:15px">Submit</button> <br>
+<h4 id='count'></h4>
+<div id='results'>
+
+<table id='resulttable'>
+<tr>
+  <th>Obs. Number</th>
+  <th>Genus</th> 
+  <th>Species</th>
+  <th>Common Name</th>
+  <th>County</th>
+  <th>Year</th>
+  <th>Observer</th>
+</tr>
+<tbody>
+</tbody>
+</table>
+    <div id="navigate" style="float:center"><a id="prevlink"> <<< Previous </a><a id="nextlink"> Next >>> </a>
+        <div id="download" style="float:right">test</div>
+    </div>
+</div>
+<div id="dialog-detail"></div>
+</body>
+<script id="detail-template" type="text/x-handlebars-template">
+    <div class="entry">
+        <table>
+        <tr><td style="width:200px"><b>Observation Number</b></td><td>{{obsnum}}</td></tr>
+        <tr><td><b>Class</b></td><td>{{class_field}}</td></tr>
+        <tr><td><b>Family</b></td><td>{{family}}</td></tr>
+        <tr><td><b>Genus</b></td><td>{{genus}}</td></tr>
+        <tr><td><b>Species</b></td><td>{{species}}</td></tr>
+        <tr><td><b>Common Name</b></td><td>{{common_name}}</td></tr>
+        <tr><td><b>County</b></td><td>{{county}}</td></tr>
+        <tr><td><b>Local</b></td><td>{{local}}</td></tr>
+        <tr><td><b>Observer</b></td><td>{{obsvr}}</td></tr>
+        <tr><td><b>Day</b></td><td>{{day}}</td></tr>
+        <tr><td><b>Month</b></td><td>{{month}}</td></tr>
+        <tr><td><b>Year</b></td><td>{{year}}</td></tr>
+        <tr><td><b>Number</b></td><td>{{number}}</td></tr>
+        <tr><td><b>Habitat</b></td><td>{{habitat}}</td></tr>
+        <tr><td><b>Remarks</b></td><td>{{remarks}}</td></tr>
+        <tr><td><b>Museum</b></td><td>{{museum}}</td></tr>
+        <tr><td><b>Citation</b></td><td>{{citatin}}</td></tr>
+        </table>
+    </div>
+</script>
+</html>
