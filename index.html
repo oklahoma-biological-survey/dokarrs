@@ -44,7 +44,7 @@ Disclaimer: The Oklahoma Biological Survey cannot warranty the accuracy or utili
 <tbody>
 </tbody>
 </table>
-    <div id="navigate" style="float:center"><a id="prevlink"> <<< Previous </a><a id="nextlink"> Next >>> </a>
+    <div id="navigate" style="float:center;margin-left:40px"><a id="prevlink"> <<< Previous </a><a id="nextlink" style="margin-left:20px"> Next >>> </a>
         <div id="download" style="float:right">test</div>
     </div>
 </div>
@@ -70,7 +70,13 @@ Disclaimer: The Oklahoma Biological Survey cannot warranty the accuracy or utili
         <tr><td><b>Remarks</b></td><td>{{remarks}}</td></tr>
         <tr><td><b>Museum</b></td><td>{{museum}}</td></tr>
         <tr><td><b>Citation</b></td><td>{{citatin}}</td></tr>
+	<tr><td><b>URL</b></td><td><a target="_blank" href="{{url}}" style="color:blue">{{url}}</a></td></tr>
         </table>
     </div>
+</script>
+<script id="tr-template" type="text/x-handlebars-template">
+                <tr><td><a href="#" onclick="showDetail('{{ obsnum }}');return false;">{{obsnum}}</a></td>
+		<td>{{genus}}</td><td>{{species}}</td><td>{{common_name}}</td>
+		<td>{{county}}</td><td>{{year}}</td><td>{{obsvr}}</td></tr>
 </script>
 </html>
